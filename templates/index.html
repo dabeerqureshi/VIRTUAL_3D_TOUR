@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual 3D Tour</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Virtual 3D Tour</div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Explore the World in 3D</h1>
+
+        <form id="tour-form">
+            <label for="place_name">Enter Place Name:</label>
+            <input type="text" id="place_name" name="place_name" placeholder="e.g., Eiffel Tower">
+
+            <label for="place_image">Upload Place Image:</label>
+            <input type="file" id="place_image" name="place_image" accept="image/*">
+
+            <label for="place_desc">Enter Place Description:</label>
+            <textarea id="place_desc" name="place_desc" placeholder="Describe the place..."></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- Error Message Display -->
+        <div id="error_message" style="color: red; display: none;"></div>
+
+        <!-- Loading Message -->
+        <div id="loading" style="display: none;">Processing... Please wait.</div>
+
+        <!-- Video Player -->
+        <video id="output" style="display:none; max-width: 100%;" controls>
+            <source id="video_source" src="" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

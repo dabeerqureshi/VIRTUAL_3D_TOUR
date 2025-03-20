@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Virtual 3D Tour</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Virtual 3D Tour</div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('gallery') }}" class="active">Gallery</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Gallery Content -->
+    <div class="container">
+        <h1>Gallery - Explore 3D Tours</h1>
+        <p>Watch 3D transformations of famous landmarks and immersive environments.</p>
+
+        <div class="gallery-container">
+            <!-- Video 1 -->
+            <div class="video-card">
+                <video controls>
+                    <source src="{{ url_for('static', filename='3d_images/chair.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-description">
+                    <h3>Chair 3D Tour</h3>
+                    <p>Experience a stunning 3D view of the Eiffel Tower, recreated using AI and Neural Radiance Fields.</p>
+                </div>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="video-card">
+                <video controls>
+                    <source src="{{ url_for('static', filename='3d_images/hand.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-description">
+                    <h3>Hand 3D Tour</h3>
+                    <p>Discover the breathtaking landscapes of the Grand Canyon in a fully immersive 3D experience.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

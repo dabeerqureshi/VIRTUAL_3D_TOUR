@@ -1,3 +1,7 @@
-flask
-gunicorn
-requests
+Flask
+numpy
+faiss-cpu
+torch
+torchvision
+clip-by-openai
+Pillow
